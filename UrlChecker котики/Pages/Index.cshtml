@@ -1,0 +1,22 @@
+﻿@page
+@model HTTP_Cat.Models.IndexModel
+@{
+        ViewData["Title"] = "Котики";
+}
+
+<h1>Введите URL, чтобы получить статус код</h1>
+
+<form method="post">
+    <input type="text" name="url" placeholder="Введите URL" required>
+    <input type="submit" value="Отправить">
+</form>
+
+@if (Model.statusCode != null)
+
+    {
+<h2>Статус код: @Model.CatUrl</h2>
+@if (Model.CatUrl != null)
+        {
+<img src="@Model.CatUrl" alt="Изображение" style="max-width: 100%; height: auto;" />
+        }
+    }
